@@ -1,0 +1,136 @@
+html {
+  box-sizing: border-box;
+}
+*,
+*:after,
+*:before {
+  box-sizing: inherit;
+}
+body {
+  margin: 0;
+  font-size: 1.6em;
+}
+
+#main-wrapper {
+  height: 100vh;
+  background: rgb(228, 216, 45);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+#calculator-wrapper {
+  width: 50%;
+  height: 80%;
+  background: rgb(117, 9, 117);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 2px;
+  border-radius: 10px;
+}
+#calculator {
+  width: 90%;
+  height: 90%;
+  display: grid;
+  grid-gap: 5px;
+  grid-template-columns: repeat(4, 1fr);
+  grid-template-rows: 1.6fr repeat(5, 1fr);
+  grid-template-areas:
+    "display display display display"
+    "one  two  three  add"
+    "four five  six  subtract"
+    "seven  eight  nine  decimal"
+    "clear zero equals equals"
+    "divide multiply equals equals";
+}
+
+#calculator div {
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#display {
+  grid-area: display;
+  background: blueviolet;
+}
+
+#equals {
+  grid-area: equals;
+  background: grey;
+}
+
+#one {
+  grid-area: one;
+  background: bisque;
+}
+#two {
+  grid-area: two;
+  background: bisque;
+}
+#three {
+  grid-area: three;
+  background: bisque;
+}
+#four {
+  grid-area: four;
+  background: bisque;
+}
+#five {
+  grid-area: five;
+  background: bisque;
+}
+#six {
+  grid-area: six;
+  background: bisque;
+}
+#seven {
+  grid-area: seven;
+  background: bisque;
+}
+#eight {
+  grid-area: eight;
+  background: bisque;
+}
+#nine {
+  grid-area: nine;
+  background: bisque;
+}
+#zero {
+  grid-area: zero;
+  background: bisque;
+}
+#add {
+  grid-area: add;
+  background: rgb(196, 112, 10);
+}
+#subtract {
+  grid-area: subtract;
+  background: rgb(196, 112, 10);
+}
+#multiply {
+  grid-area: multiply;
+  background: rgb(196, 112, 10);
+}
+#divide {
+  grid-area: divide;
+  background: rgb(196, 112, 10);
+}
+#decimal {
+  grid-area: decimal;
+  background: rgb(196, 112, 10);
+}
+#clear {
+  grid-area: clear;
+  background: rgb(196, 22, 10);
+}
+#calculator div:not(#display):hover {
+  border: 7px rgba(0, 0, 0, 0.25) solid;
+  font-weight: 600;
+}
+@media (max-width: 600px) {
+  #calculator-wrapper {
+    width: 80%;
+  }
+}
